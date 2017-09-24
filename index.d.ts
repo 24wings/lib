@@ -1,6 +1,6 @@
 declare var wx: any;
 declare var WeixinJSBridge: any;
-import { OrderState, ShopType, ShopKeeperBatType, FavoriteState, BillContent, BillType } from './index';
+import { IOrderState, IShopType, IShopKeeperBatType, IFavoriteState, IBillContent, IBillType } from './index';
 
 interface ShopKeeper {
     name: string;
@@ -72,7 +72,7 @@ interface ShopKeeper {
     qq?: string;
     weixinId?: string;
     // 企业批发类型
-    shopType?: ShopType;
+    shopType?: IShopType;
 
 }
 
@@ -169,7 +169,7 @@ interface Product {
 
 
     // 客户端多余的 收藏状态
-    favoriteState?: FavoriteState;
+    favoriteState?: IFavoriteState;
 }
 
 interface Transfer {
@@ -204,14 +204,14 @@ interface Order {
     shopKeeper?: ShopKeeper;
     lastModifyDate?: Date;
     // 订单的状态
-    orderState?: OrderState;
+    orderState?: IOrderState;
     checked?: boolean;
 
     // order
     contactPhone?: String;
     recitveCity?: { name: string, code: string };
     detailAddress?: String;
-    bill: { billType: BillType, name: string, billContent: BillContent };
+    bill: { billType: IBillType, name: string, billContent: IBillContent };
     // 留言
     msg?: string;
     //支付方式
