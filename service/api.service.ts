@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, RequestOptions, RequestOptionsArgs } from '@angular/http';
 @Injectable()
 export class ApiService {
-  serverIp = 'http://localhost';
+  serverIp = 'http://192.168.1.105';
 
   Get(url: string, options?: RequestOptionsArgs) {
     return this.http.get(`${this.serverIp}${url}`, options).toPromise().then(rtn => { let result = rtn.json(); return result.ok ? result.data : alert(result.data); })

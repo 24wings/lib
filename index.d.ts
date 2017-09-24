@@ -1,23 +1,12 @@
 declare var wx: any;
 declare var WeixinJSBridge: any;
+import { OrderState, ShopType, ShopKeeperBatType, FavoriteState, BillContent, BillType } from './index';
+
 interface ShopKeeper {
     name: string;
 }
-declare enum ActionType {
-    FIND,
-    UPDATE,
-    NEW,
-    DELETE,
-    FINDONE,
-    FindByKeyword,
-    //创建多个
-    CreateMany
-}
 
-declare enum BillType {
-    Person = 1,
-    Company
-}
+
 
 interface Ticket {
     _id?: string;
@@ -25,11 +14,7 @@ interface Ticket {
     createDt?: Date;
     lastModifyDt?: Date;
 }
-/**发票内容   详情   无需发票 */
-declare enum BillContent {
-    Detail = 1,
-    No,
-}
+
 /**用户分为两种 一种User 普通的个人用户 一种 商家  */
 interface User {
     _id?: string;
@@ -91,12 +76,7 @@ interface ShopKeeper {
 
 }
 
-declare enum ShopKeeperBatType {
-    Region = 1,
-    //厂家批发
-    Origin,
-    Town
-}
+
 
 interface ShopTag {
     _id?: string;
@@ -106,16 +86,6 @@ interface ShopTag {
     lastModifyDt?: Date;
 }
 
-declare enum ShopType {
-    // 厂家批发
-    FactoryBat = 1,
-    //省城批发
-    RegionBat,
-    //本地批发
-    LocalBat
-
-
-}
 
 interface Address {
     code?: number;
@@ -219,19 +189,7 @@ interface ProductMetaData {
     lastModifyDt?: Date;
 }
 
-// 订单状态
-declare enum OrderState {
-    // 待付款
-    Unpay = 1,
-    // 待发货
-    UnSend,
-    // 待收货
-    UnRecive,
-    // 待评论
-    UnComment,
-    // 退款中
-    ReturnMoney
-}
+
 /**支付方式 */
 declare enum PayMethod {
     WeiXin = 1,
@@ -285,10 +243,6 @@ interface ReciveAddress {
 
 
 
-declare enum FavoriteState {
-    UnFavorite = 1,
-    HadFavorite = 2
-}
 
 
 
