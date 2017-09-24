@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { ApiService } from './api.service';
 import { Model } from '../model';
+import { ActionType } from '../enum';
 
 
 
@@ -30,8 +31,8 @@ export class DbService {
     return model;
   }
   private IP = 'http://localhost';
-  userModel = this.buildModel<User>('userModel');
-  shopkeeperModel = this.buildModel<ShopKeeper>('shopkeeperModel');
+  user = this.buildModel<User>('userModel');
+
 
 
   private do<T>(action: IAction): Promise<T[]> {

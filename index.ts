@@ -1,17 +1,8 @@
 export * from './lib.module';
 export * from './service';
 
-export enum ActionType {
-    FIND,
-    UPDATE,
-    NEW,
-    DELETE,
-    FINDONE,
-    FindByKeyword,
-    //创建多个
-    CreateMany
-}
-export type IActionType = ActionType;
+
+
 
 export enum BillType {
     Person = 1,

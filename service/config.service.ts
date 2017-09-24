@@ -8,6 +8,7 @@ import { CommonService } from './common.service';
 import { WechatService } from './wechat.service';
 import { DbService } from './db.service';
 
+
 declare var WeixinJSBridge: any;
 @Injectable()
 export class ConfigService {
@@ -15,10 +16,10 @@ export class ConfigService {
 
 
   // 根据ip获取用户地理位置
-  async ipLocalAddress() {
-    let localAddress: Address = await this.api.Get('/api.ipAddress.go');
-    return { code: localAddress.data.city_id, name: localAddress.data.city };
-  }
+  // async ipLocalAddress() {
+  //   let localAddress: Address = await this.api.Get('/api.ipAddress.go');
+  //   return { code: localAddress.data.city_id, name: localAddress.data.city };
+  // }
 
 
 
@@ -35,7 +36,7 @@ export class ConfigService {
   }
   // 同步用户
   async  syncUser() {
-    let users = await this.db.userModel.find();
+    let users = await this.db.user.find();
     this.user = users[0];
     return this.user;
   }
